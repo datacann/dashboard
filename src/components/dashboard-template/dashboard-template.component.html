@@ -1,0 +1,97 @@
+<div class="row">
+  <div class="col-6">
+    <div class="course-card">
+      <div class="course-card-header" (click)="togglePanelTopEmployees()">
+        Top Employees
+      </div>
+      <div class="course-card-body" [class.expanded]="isExpandedEmployees">
+        <div class="card-list card-adjustment">
+          <div *ngFor="let user of topEmployees" class="card">
+            <div class="card-body">
+              <h5 class="card-title">{{ user.name }}</h5>
+              <p class="card-text">Score: {{ user.current_score }}</p>
+              <p class="card-text">Title: {{ user.title }}</p>
+              <p class="card-text">Email: {{ user.email }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="course-card">
+      <div class="course-card-header" (click)="togglePanelTopSkills()">
+        Top Interesting Skills
+      </div>
+      <div class="course-card-body" [class.expanded]="isExpandedInteresting">
+        <div class="card-body">
+          <canvas #pieChartCanvas></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="course-card">
+      <div class="course-card-header" (click)="togglePanelActivity()">
+        Activity Hours
+      </div>
+      <div class="course-card-body" [class.expanded]="isExpandedActivity">
+        <div class="chat-body col-12 card-list card-adjustment">
+          <canvas #barChartCanvas></canvas>
+        </div>
+    </div>
+  </div>
+    <div class="course-card">
+      <div class="course-card-header" (click)="togglePanelInProgress()">
+        Courses In Progress
+      </div>
+      <div class="course-card-body" [class.expanded]="isExpandedCourses">
+        <div class="course-card-details">
+          <div class="course-detail"><strong>Title</strong></div>
+          <div class="course-detail"><strong>Status</strong></div>
+          <div class="course-detail"><strong>Assignee</strong></div>
+          <div class="course-detail"><strong>Due Date</strong></div>
+          <div class="course-detail"><strong>Description</strong></div>
+        </div>
+        <hr>
+        <div *ngFor="let course of inProgressCourses" class="course-card-details">
+          <div class="course-detail">{{ course.title }}</div>
+          <div class="course-detail">{{ course.status }}</div>
+          <div class="course-detail">{{ course.assigned_to }}</div>
+          <div class="course-detail">{{ course.due_date }}</div>
+          <div class="course-detail">{{ course.description }}</div>
+        </div>
+  </div>
+</div>
+    <div class="course-card">
+      <div class="course-card-header" (click)="togglePanelUpcomingProgress()">
+        Upcoming Progress
+      </div>
+      <div class="course-card-body" [class.expanded]="UpcomingProgress">
+        <div class="course-card-details">
+          <div class="course-detail"><strong>Title</strong></div>
+          <div class="course-detail"><strong>Status</strong></div>
+          <div class="course-detail"><strong>Assignee</strong></div>
+          <div class="course-detail"><strong>Due Date</strong></div>
+          <div class="course-detail"><strong>Description</strong></div>
+        </div>
+        <hr>
+        <div *ngFor="let course of upComingCourses" class="course-card-details">
+          <div class="course-detail">{{ course.title }}</div>
+          <div class="course-detail">{{ course.status }}</div>
+          <div class="course-detail">{{ course.assigned_to }}</div>
+          <div class="course-detail">{{ course.due_date }}</div>
+          <div class="course-detail">{{ course.description }}</div>
+        </div>
+      </div>
+    </div>
+    <div class="course-card mb-3">
+      <div class="course-card-header" (click)="togglePanelSkillsDev()">
+        Skills In Development
+      </div>
+      <div class="course-card-body" [class.expanded]="isExpandedSkills">
+        <div class="chat-body">
+          <canvas #barChartCanvas1></canvas>
+        </div>
+      </div>
+  </div>

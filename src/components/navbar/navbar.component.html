@@ -1,0 +1,32 @@
+
+
+<nav class="navbar navbar-light bg-light">
+  <div class="container">
+    <span class="navbar-text font-weight-bold">
+      {{ selectedTeamTitle }}
+    </span>
+    <div class="d-flex gap">
+ <button class="btn btn-secondary" type="button" (click)="selectTeama()">
+      Dashboard
+    </button>
+    <div class="dropdown" (mouseover)="openDropdown()" (mouseleave)="closeDropdown()">
+      <button class="btn btn-secondary" type="button">
+        Teams
+      </button>
+      <div class="dropdown-menu" [class.show]="isDropdownOpen">
+        <button class="dropdown-item" *ngFor="let team of teams" (click)="selectTeam(team)">
+          {{ team.title }}
+        </button>
+      </div>
+      
+    </div>
+   
+    </div>
+  </div>
+</nav>
+
+<div *ngIf="!isDash" class="container">
+  <app-dashboard-template></app-dashboard-template>
+</div>
+<app-team-detail *ngIf="isDash" [teamDetail]="selectedTeamData"></app-team-detail>
+

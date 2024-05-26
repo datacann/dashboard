@@ -1,0 +1,90 @@
+<div class="container">
+   <div class=" course-card">
+    <div class="course-card-header" (click)="togglePanelTeam()">
+      Team Profile
+    </div>
+    <div class="course-card-body" [class.expanded]="isExpandedTeam">
+      <div class="course-card-details">
+        <div class="course-detail">
+          <strong>Title</strong>
+        </div>
+        <div class="course-detail">
+          <strong>Overall Score</strong>
+        </div>
+        <div class="course-detail">
+          <strong>Description</strong>
+        </div>
+        <div class="course-detail">
+          <strong>Employee Count</strong>
+        </div>
+      </div>
+      <hr>
+      <div class="course-card-details">
+        <div class="course-detail">
+          {{ teamDetail.title }}
+        </div>
+        <div class="course-detail">
+          {{ teamDetail.overall_score }}
+        </div>
+        <div class="course-detail">
+          {{ teamDetail.description }}
+        </div>
+        <div class="course-detail">
+          {{ teamDetail.total_employee_count }}
+        </div>
+      </div>
+    </div>
+  </div> 
+</div>
+
+<div class="container">
+    <div class="course-card">
+    <div class="course-card-header" (click)="togglePanelEmployee()">
+        Employee Profile
+    </div>
+    <div class="course-card-body" [class.expanded]="isExpandedEmployee">
+      <div class="course-card-details">
+        <div class="course-detail">
+          <strong>Title</strong>
+        </div>
+        <div class="course-detail">
+          <strong>Overall Score</strong>
+        </div>
+        <div class="course-detail">
+          <strong>Description</strong>
+        </div>
+        <div class="course-detail">
+          <strong>Employee Count</strong>
+        </div>
+        <div class="course-detail">
+            <strong>Employee Count</strong>
+          </div>
+          <div class="course-detail">
+            <strong>Employee Count</strong>
+          </div>
+      </div>
+      <hr>
+      <div *ngFor="let employee  of employeesDetail" class="course-card-details">
+        <div class="course-detail">
+          {{ employee.current_score }}
+        </div>
+        <div class="course-detail">
+          {{ employee.email }}
+        </div>
+        <div class="course-detail">
+          {{ employee.lessons_taken }}
+        </div>
+        <div class="course-detail">
+          {{ employee.name }}
+        </div>
+        <div class="course-detail">
+            {{ employee.skills_being_developed }}
+          </div>
+        <div class="course-detail">
+            {{ employee.title }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  
