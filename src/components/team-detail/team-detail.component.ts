@@ -48,9 +48,6 @@ export class TeamDetailComponent  {
     this.route.params.subscribe(params => {   
       this.teamDetail = history.state.teamData;
        this.employeesDetail = this.teamDetail.employees; 
-      console.log(this.teamDetail);
-      console.log(this.employeesDetail);
-      
     });
   }
 

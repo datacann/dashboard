@@ -44,9 +44,7 @@ export class NavbarComponent {
   ngOnInit() {
     this.dataService.getUsers().subscribe(
       (response: any) => {
-        console.log(response);
         this.teams = response.data.teams;
-        console.log(this.teams);
       },
       (error) => {
         console.error('Error fetching data:', error);
@@ -60,11 +58,11 @@ export class NavbarComponent {
     const url = `/team/${team.title}`;
     this.router.navigateByUrl(url, { state: { teamData: team } });
     this.cdr.detectChanges(); 
-    this.isDash = !localStorage.getItem('isDash')
+    this.isDash = !sessionStorage.getItem('isDash')
   }
   
   isTeamSelected(): boolean {
-    const teamData = localStorage.getItem('selectedTeam');
+    const teamData = sessionStorage.getItem('selectedTeam');
     return teamData !== null; 
   }
 
@@ -77,6 +75,6 @@ export class NavbarComponent {
   }
 
   selectTeama() {
-    this.isDash = !!localStorage.getItem('isDash')
+    this.isDash = !!sessionStorage.getItem('isDash')
   }
 }
