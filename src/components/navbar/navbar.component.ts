@@ -74,7 +74,8 @@ export class NavbarComponent {
     this.isDropdownOpen = false;
   }
 
-  selectTeama() {
+  goDashboard() {
     this.isDash = !!sessionStorage.getItem('isDash')
+    this.selectedTeamTitle = 'Welcome to Company Dashboard';
   }
 }
