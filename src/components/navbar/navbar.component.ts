@@ -60,7 +60,7 @@ export class NavbarComponent {
     const url = `/team/${team.title}`;
     this.router.navigateByUrl(url, { state: { teamData: team } });
     this.cdr.detectChanges(); 
-    this.isDash = !!localStorage.getItem('isDash')
+    this.isDash = !localStorage.getItem('isDash')
   }
   
   isTeamSelected(): boolean {
@@ -77,8 +77,6 @@ export class NavbarComponent {
   }
 
   selectTeama() {
-    this.isDash = !localStorage.getItem('isDash')
+    this.isDash = !!localStorage.getItem('isDash')
   }
-
-
 }
