@@ -1,6 +1,7 @@
 # Dashboard
 
-For see the result : https://dashboard-eight-wine.vercel.app/
+
+For see the result : https://dashboard-eight-wine.vercel.app/    (Instead of putting an empty button, I put 2 buttons with actions in them.)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.1.
 
